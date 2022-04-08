@@ -1,0 +1,57 @@
+﻿/* Global */
+h1, h2, h3{
+    font-size: 2.5em;
+    font-weight: 400;
+    text-align: center;
+}
+
+#main{
+    height: 100vh;
+    background: #58C2AD;
+    margin-top: 80px;
+    overflow-y: auto;
+}
+
+#about-section, #contact-section, #services-section, #home-section{
+    width: 80%; 
+    margin: auto;
+}
+
+.description{
+    padding: 0;
+    font-size: 1.25em;
+    margin: 0;
+}
+
+.bold{
+    font-weight: 600;
+}
+
+.shaded{
+    text-align: center;
+    width: 100%;
+    background: rgb(0, 0, 0, 0.75);
+}
+
+@media(max-width: 600px){
+    #contact-form{
+        width: 100%;
+    }
+}
+
+@media(max-width: 450px) {
+    #contact-form{
+        width: 100%;
+    }
+
+    #services-photos{
+        grid-template-rows: repeat(8, 300px);
+        grid-template-columns: auto;
+    }
+
+    .testimonial{
+        width: 100%;
+    }
+}
+
+

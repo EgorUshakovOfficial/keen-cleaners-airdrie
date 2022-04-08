@@ -1,0 +1,19 @@
+﻿footer {
+    height: 80px;
+    background: #35B4D0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/*#social-media-container{
+    padding: 0.5em;
+}*/
+
+/*footer i {
+    color: white;
+    font-size: 1.25em;
+    padding-left: 0.5em;
+    margin: 0; 
+}*/

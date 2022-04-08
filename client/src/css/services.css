@@ -1,0 +1,43 @@
+﻿/*#services-section{
+    overflow-y: scroll;
+}*/
+#services-section h2{
+    padding-top: 0.5em;
+}
+
+
+#services-photos {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(4, 300px);
+    gap: 10px;
+    padding-top: 10px;
+    margin: 0;
+}
+
+
+
+.service {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 1.25em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#services-list{
+    font-size: 1.25em;
+}
+
+#services-list li{
+    padding-top: 10px;
+}
+
+
+
