@@ -1,5 +1,13 @@
-﻿#about-section h1{
-    padding-top: 0.5em;
-    font-weight: 400;
-    font-size: 2.5em;
+﻿about-description-container > *{
+    margin: 10px;
+}
+
+#about-photo-div{
+    width: 70%; 
+    margin: 10px auto;
+}
+
+#about-photo-div img{
+    width: 100%;
+    height: 100%;
 }

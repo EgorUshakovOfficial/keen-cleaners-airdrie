@@ -61,7 +61,7 @@ const ContactForm = () => {
             </div>
             <div className="field-div">
                 <label for="phone-number">Phone number</label>
-                <input type="text" id="phone-number" name="phoneNumber" placeholder="(###)-###-#####" value={number} onChange={e => setNumber(e.target.value)} />
+                <input type="text" id="phone-number" name="phoneNumber" placeholder="(###)-###-####" value={number} onChange={e => setNumber(e.target.value)} />
             </div>
             <div className="field-div">
                 <label for="message">Message</label>

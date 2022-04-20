@@ -1,14 +1,12 @@
 // JavaScript source code
 const ServicePhotos = () => {
     const photosObj = {
-        bathtubs: "Bathtubs",
-        bedrooms: "Bedrooms",
-        beds: "Beds",
-        couches: "Couches",
-        "shower-heads": "Shower-heads",
-        "sinks-mirrors": "Sinks and Mirrors",
-        "carpet-stairs": "Carpet and stairs",
-        "toilets": "Toilets"
+        "bathroom": "Bathrooms",
+        "bedroom": "Bedrooms",
+        "family-room": "Family Rooms",
+        "kitchen": "Kitchens",
+        "living-room": "Living Rooms",
+        "office": "Offices"
     }
 
     const photoKeys = Object.keys(photosObj);
@@ -16,8 +14,9 @@ const ServicePhotos = () => {
     return (
         <div id="services-photos">
             {photoKeys.map(key => {
-                return (<div className="service" key={key} style={{ backgroundImage: "url(" + require(`../Images/${key}.jpg`) + ")"}}>
-                    <span class="shaded">{photosObj[key]}</span>
+                return (<div className="service" key={key}>
+                    <img src={require(`../Images/${key}.jpg`)} />
+                    <div className="service-room">{photosObj[key]}</div>
                 </div>)
             })}
         </div>

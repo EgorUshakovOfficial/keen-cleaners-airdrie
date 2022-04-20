@@ -1,19 +1,16 @@
 ﻿footer {
     height: 80px;
-    background: #35B4D0;
+    background: #58C2AD;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     color: white;
 }
 
-/*#social-media-container{
-    padding: 0.5em;
-}*/
-
-/*footer i {
+#footer-contact-link, #social-media a{
     color: white;
-    font-size: 1.25em;
-    padding-left: 0.5em;
-    margin: 0; 
-}*/
+}
+
+#social-media a {
+    padding: 10px;
+}

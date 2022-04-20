@@ -6,14 +6,14 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background: #35B4D0;
+    background: white;
     border: 1px solid #35B4D0;
     z-index: 3;
 }
 
 #logo {
     background: white;
-    width: 80px;
+    width: 120px;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -25,12 +25,19 @@
     width: 100%;
 }
 
-#navbar a{
-    color: white;
+.fa-bars, .fa-close {
+    position: absolute;
+    transform: translateX(-200vh);
     font-size: 1.25em;
-    padding: 0.5em;
-    text-decoration: none;
+    padding: 10px
+}
 
+#navbar a {
+    color: #35B4D0;
+    font-size: 1.25em;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px;
 }
 
 #navbar a:hover{

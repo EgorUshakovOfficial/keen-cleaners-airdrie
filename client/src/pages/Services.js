@@ -3,18 +3,13 @@ import ServicePhotos from '../components/ServicePhotos';
 const Services = () => {
     return (
         <section id="services-section">
-            <h2>Services</h2>
-            <p className="description">We offer residential house cleaning services and clean</p>
+            <div id="service-info-container">
+                <h2>Services</h2>
+                <p className="service-description">We offer residentials house cleaning services and complete through deep clean of any and all areas of the house. We are also open to special requests</p>
+                <p className="service-description">Our rates are $25/hr up to 5hrs per session.</p>
+                <p className="service-description">After 5hrs automatic $200 until finished</p>
+            </div>
             <ServicePhotos />
-            <p className="description">We specifically</p>
-            <ul id="services-list">
-                <li>dust and clean floors</li>
-                <li>scrub and wash showerheads, toilets, and sinks in bathrooms</li>
-                <li>scrub windows inside houses </li>
-                <li>wipe down stoves and countertops</li>
-                <li>dust and vacuum bedrooms</li>
-                <li>Vacuum carpeted stairs or rugs</li>
-            </ul>
         </section>
     )
 }
