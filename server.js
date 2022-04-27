@@ -4,6 +4,7 @@ require('dotenv').config();
 // For server side rendering 
 const App = require('./client/src/components/App');
 const ReactDOMServer = require('react-dom/server');
+import React from 'react'; 
 
 const express = require('express');
 const app = express();
