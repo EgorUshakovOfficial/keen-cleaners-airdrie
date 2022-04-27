@@ -67,7 +67,7 @@ app.post('/contact', (req, res) => {
 
 if (process.env.NODE_ENV === "production") {
     // Set static folder 
-    app.use(express.static('client/build'));
+    /*app.use(express.static('client/build'));*/
    
 
     app.use("*", (req, res) => {
