@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 
 const Navbar = () => {
     // State
-    const [navMobState, setNavMobState] = useState("close")
+    const [navMobState, setNavMobState] = React.useState("close")
 
     // Handle navigate 
     const handleNavigate = () => {
