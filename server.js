@@ -1,9 +1,10 @@
 // Dotenv
 require('dotenv').config();
 
-//const App = require('./client/src'); 
+// For server side rendering 
+import App  from './client/src';
+import ReactDOMServer from 'react-dom/server';
 
-//const ReactDOMServer = require('react-dom/server');
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -66,11 +67,22 @@ if (process.env.NODE_ENV === "production") {
     // Set static folder 
     app.use(express.static('client/build'));
 
-    app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'indext.html')); 
+    app.get('/', (req, res) => {
+        const app = ReactDOMServer.renderToString(<App />)
+        const indexFile = path.resolve('./client/build/index.html')
+
+        fs.readFile(indexFile, "utf-8", (err, data) => {
+            if (err) {
+                console.warn(err)
+                return res.status(500).send("Something went wrong!")
+            }
+            return res.send(data.replace(`<div id="root"></div>`, `<div id="root">${app}</div>`))
+        })
     })
 
-
+    //app.get("*", (req, res) => {
+    //    res.sendFile(path.resolve(__dirname, 'client', 'build', 'indext.html')); 
+    //})
 }
 
 // Listen to server 

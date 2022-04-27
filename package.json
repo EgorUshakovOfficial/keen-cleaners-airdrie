@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "client-install": "npm install --prefix client",
-    "start": "node server.js",
+    "start": "node index.js",
     "client": "npm start --prefix client",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
@@ -19,12 +19,17 @@
   "author": "Egor Ushakov",
   "license": "MIT",
   "dependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/register": "^7.17.7",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "ignore-styles": "^5.0.1",
     "nodemailer": "^6.7.3",
     "path": "^0.12.7",
+    "react": "^18.1.0",
     "react-dom": "^18.1.0"
   }
 }
