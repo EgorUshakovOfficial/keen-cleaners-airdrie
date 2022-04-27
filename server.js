@@ -12,7 +12,6 @@ require('dotenv').config();
 // For server side rendering 
 const App = require('./client/src/components/App');
 const ReactDOMServer = require('react-dom/server');
-const { StaticRouter } = require('react-router-dom/server');
 
 const express = require('express');
 const app = express();
