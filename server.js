@@ -1,13 +1,16 @@
 // Dotenv
 require('dotenv').config();
 
+import ReactDOMServer from 'react-dom/server';
+import App from './client/src'; 
 
 const express = require('express');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const nodeMailer = require('nodemailer');
-const path = require('path'); 
+const path = require('path');
+
 
 // Middleware
 app.use(cors({
@@ -64,7 +67,15 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static('client/build'));
 
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, "client", "build", "index.html")); 
+        fs.readFile(path.resolve('./client/build/index.html'), "utf-8", (err, data) => {
+            if (err) {
+                console.warn(err)
+                return res.status(500).send("Some error has occurred")
+            }
+            return res.send(
+                data.replace(`<div id="root"></div>`, `<div id="root">${ReactDOMServer.renderToString(<App />)}</div>`)
+            )
+        })
     })
 }
 
