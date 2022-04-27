@@ -12,21 +12,19 @@ import Home from '../pages/Home';
 import app from '../css/app.css';
 const App = () => {
   return (
-    <Router>
-        <div className="App">
-              <Navbar />
-              <div id="main">
-                  <Routes>
-                    <Route path="/" element={<About />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/services" element={<Services />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="*" element={<div>An error occurred</div>} />
-                  </Routes>
-              </div>
-              <Footer />
-        </div>
-    </Router>
+  <div className="App">
+      <Navbar />
+      <div id="main">
+          <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<div>An error occurred</div>} />
+          </Routes>
+      </div>
+      <Footer />
+  </div>
   );
 }
 
