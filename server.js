@@ -1,7 +1,7 @@
 // Dotenv
 require('dotenv').config();
 
-import App from './client/src'; 
+const App = require('./client/src'); 
 
 const ReactDOMServer = require('react-dom/server');
 const express = require('express');
