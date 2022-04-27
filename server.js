@@ -69,8 +69,12 @@ if (process.env.NODE_ENV === "production") {
     // Set static folder 
     app.use(express.static('client/build'));
 
-    app.use("/about", (req, res) => {
-        const app = ReactDOMServer.renderToString(<App />)
+    app.get("*", (req, res) => {
+        const app = ReactDOMServer.renderToString(
+            <StaticRouter location={req.url}>
+                <App />
+            </StaticRouter>
+        )
         const indexFile = path.resolve('./client/build/index.html')
 
         fs.readFile(indexFile, "utf-8", (err, data) => {
@@ -78,7 +82,7 @@ if (process.env.NODE_ENV === "production") {
                 console.warn(err)
                 return res.status(500).send("Something went wrong!")
             }
-            return res.send(data.replace(`<div id="root"></div>`, `<div id="root">${app}</div>`))
+            return res.send(data.replace(`<div id="root"></div>`, `<div id="root">Hello</div>`))
         })
     })
 
