@@ -70,11 +70,7 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static('client/build'));
 
     app.use((req, res) => {
-        const app = ReactDOMServer.renderToString(
-            <StaticRouter location={req.url}>
-                <App />
-            </StaticRouter>
-        )
+        const app = ReactDOMServer.renderToString(<App />)
         const indexFile = path.resolve('./client/build/index.html')
 
         fs.readFile(indexFile, "utf-8", (err, data) => {
