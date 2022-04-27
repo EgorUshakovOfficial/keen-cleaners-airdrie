@@ -1,9 +1,9 @@
 // Dotenv
 require('dotenv').config();
 
-const App = require('./client/src'); 
+//const App = require('./client/src'); 
 
-const ReactDOMServer = require('react-dom/server');
+//const ReactDOMServer = require('react-dom/server');
 const express = require('express');
 const app = express();
 const cors = require('cors');
