@@ -5,7 +5,7 @@ require('dotenv').config();
 import App from './client/src/components/App';
 const ReactDOMServer = require('react-dom/server');
 import React from 'react'; 
-import { BrowserRouter as Router } from 'react-router-dom';
+import { StaticRouter } from 'react-router-dom/server'; 
 
 const express = require('express');
 const app = express();
@@ -71,9 +71,9 @@ if (process.env.NODE_ENV === "production") {
 
     app.use((req, res) => {
         const app = ReactDOMServer.renderToString(
-            <Router>
+            <StaticRouter location={req.url}>
                 <App />
-            </Router>
+            </StaticRouter>
         )
         const indexFile = path.resolve('./client/build/index.html')
 
