@@ -72,9 +72,13 @@ if (process.env.NODE_ENV === "production") {
                 console.warn(err)
                 return res.status(500).send("Some error has occurred")
             }
-            return res.send(
-                data.replace(`<div id="root"></div>`, `<div id="root">${ReactDOMServer.renderToString(<App />)}</div>`)
-            )
+            else {
+                const app = ReactDOMServer.renderToString(<App />)
+                console.log(app)
+                return res.send(
+                    data.replace(`<div id="root"></div>`, `<div id="root">${app}</div>`)
+                )
+            }
         })
     })
 }
