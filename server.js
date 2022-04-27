@@ -5,6 +5,7 @@ require('dotenv').config();
 import App from './client/src/components/App';
 const ReactDOMServer = require('react-dom/server');
 import React from 'react'; 
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const express = require('express');
 const app = express();
@@ -69,7 +70,11 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static('client/build'));
 
     app.use((req, res) => {
-        const app = ReactDOMServer.renderToString(<App />)
+        const app = ReactDOMServer.renderToString(
+            <Router>
+                <App />
+            </Router>
+        )
         const indexFile = path.resolve('./client/build/index.html')
 
         fs.readFile(indexFile, "utf-8", (err, data) => {

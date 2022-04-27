@@ -1,5 +1,4 @@
-import {
-    BrowserRouter as Router, 
+import { 
     Routes, 
     Route
 } from 'react-router-dom';
@@ -13,7 +12,6 @@ import React from 'react';
 import app from '../css/app.css';
 const App = () => {
     return (
-      <Router>
           <div className="App">
               <Navbar />
               <div id="main">
@@ -24,9 +22,8 @@ const App = () => {
                       <Route path="/contact" element={<Contact />} />
                   </Routes>
               </div>
-              <Footer />
-          </div>
-      </Router>
+            <Footer />
+         </div>
    );
 }
 
