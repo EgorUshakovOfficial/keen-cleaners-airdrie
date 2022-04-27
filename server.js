@@ -5,7 +5,7 @@ require('dotenv').config();
 import App from './client/src/components/App';
 const ReactDOMServer = require('react-dom/server');
 import React from 'react'; 
-import { StaticRouter } from 'react-router-dom/server'; 
+import { StaticRouter } from 'react-router/server'; 
 
 const express = require('express');
 const app = express();
@@ -68,6 +68,7 @@ app.post('/contact', (req, res) => {
 if (process.env.NODE_ENV === "production") {
     // Set static folder 
     app.use(express.static('client/build'));
+    app.use("*", express.static('client/build'));
 
     app.get("*", (req, res) => {
         const app = ReactDOMServer.renderToString(
