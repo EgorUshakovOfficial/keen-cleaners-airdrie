@@ -5,7 +5,7 @@ require('dotenv').config();
 import App from './client/src/components/App';
 const ReactDOMServer = require('react-dom/server');
 import React from 'react'; 
-import { StaticRouter } from 'react-router'; 
+import { StaticRouter } from 'react-router-dom/server'; 
 
 const express = require('express');
 const app = express();
@@ -67,20 +67,26 @@ app.post('/contact', (req, res) => {
 
 if (process.env.NODE_ENV === "production") {
     // Set static folder 
-    /*app.use(express.static('client/build'));*/
-   
+    app.use(express.static('client/build'));
 
-    app.use("*", (req, res) => {
-        const app = ReactDOMServer.renderToString(<App />)
-        const indexFile = path.resolve('./client/build/index.html')
+    app.get("*", (req, res) => {
+        const html = ReactDOMServer.renderToString(
+            <StaticRouter location={req.url}>
+                <App />
+            </StaticRouter>
+        )
 
-        fs.readFile(indexFile, "utf-8", (err, data) => {
-            if (err) {
-                console.warn(err)
-                return res.status(500).send("Something went wrong!")
-            }
-            return res.send(data.replace(`<div id="root"></div>`, `<div id="root">${app}</div>`))
-        })
+        res.send(html)
+
+        /*const indexFile = path.resolve('./client/build/index.html')*/
+
+        //fs.readFile(indexFile, "utf-8", (err, data) => {
+        //    if (err) {
+        //        console.warn(err)
+        //        return res.status(500).send("Something went wrong!")
+        //    }
+        //    return res.send(data.replace(`<div id="root"></div>`, `<div id="root">${app}</div>`))
+        //})
     })
 
     //app.get("*", (req, res) => {
