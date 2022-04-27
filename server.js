@@ -75,7 +75,7 @@ if (process.env.NODE_ENV === "production") {
     // Set static folder 
     app.use(express.static('client/build'));
 
-    app.get('*', (req, res) => {
+    app.use((req, res) => {
         const app = ReactDOMServer.renderToString(App)
         console.log(app)
         const indexFile = path.resolve('./client/build/index.html')
