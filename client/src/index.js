@@ -10,6 +10,6 @@ const container = document.getElementById("root");
 const root = createRoot(container);
 
 // Initial render
-root.hydrate(<App />);
+root.render(<App />);
 
 
