@@ -1,11 +1,3 @@
-// Babel 
-require('ignore-styles');
-
-require('@babel/register')({
-    ignore: [/(node_modules)/],
-    presets: ['@babel/preset-env', '@babel/preset-react']
-})
-
 // Dotenv
 require('dotenv').config();
 
@@ -77,7 +69,6 @@ if (process.env.NODE_ENV === "production") {
 
     app.use((req, res) => {
         const app = ReactDOMServer.renderToString(App)
-        console.log(app)
         const indexFile = path.resolve('./client/build/index.html')
 
         fs.readFile(indexFile, "utf-8", (err, data) => {
