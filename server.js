@@ -82,7 +82,7 @@ if (process.env.NODE_ENV === "production") {
                 console.warn(err)
                 return res.status(500).send("Something went wrong!")
             }
-            return res.send(data.replace(`<div id="root"></div>`, `<div id="root">Hello</div>`))
+            return res.send(data.replace(`<div id="root"></div>`, `<div id="root">${app}</div>`))
         })
     })
 
