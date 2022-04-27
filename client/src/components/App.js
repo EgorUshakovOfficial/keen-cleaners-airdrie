@@ -8,7 +8,8 @@ import About from '../pages/About';
 import Services from '../pages/Services';
 import Contact from '../pages/Contact';
 import Footer from './Footer';
-import Home from '../pages/Home'; 
+import Home from '../pages/Home';
+import React from 'react';
 import app from '../css/app.css';
 const App = () => {
     return (
