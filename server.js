@@ -5,7 +5,7 @@ require('dotenv').config();
 import App from './client/src/components/App';
 const ReactDOMServer = require('react-dom/server');
 import React from 'react'; 
-import { StaticRouter } from 'react-router/server'; 
+import { StaticRouter } from 'react-router'; 
 
 const express = require('express');
 const app = express();
