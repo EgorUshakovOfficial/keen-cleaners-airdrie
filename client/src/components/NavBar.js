@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import logo from '../Images/logo.svg';
 import navbar from '../css/navbar.css';
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 
 const Navbar = () => {
     // State
-    /*const [navMobState, setNavMobState] = React.useState("close")*/
+    const [navMobState, setNavMobState] = React.useState("close")
 
     // Handle navigate 
     //const handleNavigate = () => {
