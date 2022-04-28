@@ -73,7 +73,7 @@ if (process.env.NODE_ENV === "production") {
                 <App />
             </StaticRouter>
         )
-        fs.readFile(path.resolve('./client/build/index.html'), "utf-8", (err, data) => {
+        fs.readFile(path.resolve(__dirname, 'client', 'build', 'index.html'), "utf-8", (err, data) => {
             if (err) {
                 console.warn(err)
                 return res.status(500).send("Some error has occurred")
