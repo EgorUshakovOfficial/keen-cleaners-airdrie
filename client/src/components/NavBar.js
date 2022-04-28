@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import logo from '../Images/logo.svg';
 import navbar from '../css/navbar.css';
-import React from 'react';  
+import React, {useEffect, useState} from 'react';
 
 const Navbar = () => {
     // State
