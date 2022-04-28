@@ -53,15 +53,15 @@ const ContactForm = () => {
             </div>}
             <div className="field-div">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" value={name} onChange={e => setName(e.target.value)}required />
+                <input type="text" id="name" name="name" value={name}  onChange={e => setName(e.target.value)} required />
             </div>
             <div className="field-div">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" value={email} onChange={e => setEmail(e.target.value)}required />
+                <input type="email" id="email" name="email" value={email} onChange={e => setEmail(e.target.value)} required />
             </div>
             <div className="field-div">
                 <label for="phone-number">Phone number</label>
-                <input type="text" id="phone-number" name="phoneNumber" placeholder="(###)-###-####" value={number} onChange={e => setNumber(e.target.value)} />
+                <input type="text" id="phone-number" name="phoneNumber" value={number} onChange={e => setNumber(e.target.value)} />
             </div>
             <div className="field-div">
                 <label for="message">Message</label>

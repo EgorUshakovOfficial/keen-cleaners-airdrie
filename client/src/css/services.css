@@ -9,6 +9,33 @@
     gap: 3%;
 }
 
+#service-list-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#services-rates{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#services-rates > *{
+    text-align: center;
+}
+
+.service-list{
+    margin-bottom: 0;
+}
+
+.service-list li{
+    font-size: 1.25em;
+}
+
+.service-list li:not(:last-child){
+    margin-bottom: 10px;
+}
+
 .service{
     border-radius: 5px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);

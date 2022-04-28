@@ -11,9 +11,15 @@ input, textarea {
     border: none;
     border-radius: 5px;
 }
-#phone-email > *{
-    margin: 10px 0; 
+
+#contact-description-container > *{
+    text-align: center;
 }
+
+#phone-email > * {
+    margin: 10px 0;
+}
+
 /* Contact form */
 #contact-form {
     width: 60%;

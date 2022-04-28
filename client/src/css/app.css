@@ -36,26 +36,30 @@ h1, h2, h3{
 #home-description-container > *,
 #about-description-container > *,
 #service-info-container > *,
-#contact-description-container > * {
+#contact-description-container > *,
+#services-rates > *{
     margin: 10px 0;
 }
 
 #about-description-container,
 #service-info-container,
-#contact-description-container {
+#contact-description-container,
+#services-rates {
     position: relative;
     margin: 10px 0;
 }
 
 #service-info-container::before,
 #contact-description-container::before,
-#about-description-container::before {
+#about-description-container::before, 
+#services-rates::before{
     content: '';
     background: rgba(53, 180, 208, 0.1);
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 50%;
+
 }
 
 .home-description,
@@ -73,9 +77,11 @@ h1, h2, h3{
 
 .bold{
     font-weight: 600;
+    padding: 0;
 }
 
 .bigger{
+    padding: 10px; 
     font-size: 1.25em;
 }
 
@@ -93,7 +99,6 @@ h1, h2, h3{
 
 @media(max-width: 450px) {
 
-    #
     #contact-form{
         width: 100%;
     }
@@ -103,11 +108,17 @@ h1, h2, h3{
     }
 
     #services-photos {
-        grid-template-rows: repeat(8, 300px);
+        grid-template-rows: repeat(7, 300px);
         grid-template-columns: auto;
+        gap: 2.5%;
     }
 
-    .testimonial{
+    #services-rates{
+        padding: 0;
+        margin: 10px auto;
+    }
+
+    .testimonial {
         width: 100%;
     }
 
