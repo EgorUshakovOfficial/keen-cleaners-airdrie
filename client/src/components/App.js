@@ -14,15 +14,16 @@ const App = () => {
     return (
           <div className="App">
               {/*<Navbar />*/}
-              <div id="main">
-                  <Routes>
-                      <Route path="/" element={<Home />} />
-                      <Route path="/about" element={<About />} />
-                      <Route path="/services" element={<Services />} />
-                      <Route path="/contact" element={<Contact />} />
-                  </Routes>
+            <div id="main">
+                Hello World
+                  {/*<Routes>*/}
+                  {/*    <Route path="/" element={<Home />} />*/}
+                  {/*    <Route path="/about" element={<About />} />*/}
+                  {/*    <Route path="/services" element={<Services />} />*/}
+                  {/*    <Route path="/contact" element={<Contact />} />*/}
+                  {/*</Routes>*/}
               </div>
-            <Footer />
+            {/*<Footer />*/}
          </div>
    );
 }
