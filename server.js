@@ -23,7 +23,7 @@ app.use(cors({
 }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
+app.use(express.static(__dirname, 'client', 'src', 'css'))
 
 // Node mailer 
 let transporter = nodeMailer.createTransport({
@@ -68,11 +68,10 @@ app.post('/contact', (req, res) => {
 
 if (process.env.NODE_ENV === "production") {
     // Set static folder 
-    app.use(express.static('client/build'))
 
-    //app.get("*", (req, res) => {
-    //    const markup = ReactDOMServer.renderToString(<App />)
-    //    res.send(markup)
+    app.get("*", (req, res) => {
+        const markup = ReactDOMServer.renderToString(<App />)
+        res.send(markup)
     //    //fs.readFile(path.resolve(__dirname, 'client', 'build', 'index.html'), "utf-8", (err, data) => {
     //    //    if (err) {
     //    //        console.warn(err)
@@ -81,7 +80,7 @@ if (process.env.NODE_ENV === "production") {
     //    //        return res.send(data.replace(`<div id="root"></div>`, `<div id="root">${markup}</div>`))
     //    //    }
     //    //})
-    //})
+    })
 
   
 }
