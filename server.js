@@ -67,6 +67,9 @@ app.post('/contact', (req, res) => {
 })
 
 if (process.env.NODE_ENV === "production") {
+    // Set static folder 
+    app.use(express.static('client/build'))
+
     app.get("*", (req, res) => {
         const markup = ReactDOMServer.renderToString(<App />)
         res.send(markup)
@@ -79,9 +82,6 @@ if (process.env.NODE_ENV === "production") {
         //    }
         //})
     })
-
-    // Set static folder 
-    app.use(express.static('client/build'))
 
   
 }
