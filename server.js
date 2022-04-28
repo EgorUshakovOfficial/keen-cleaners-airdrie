@@ -3,7 +3,7 @@ require('dotenv').config();
 
 // For server side rendering 
 import App from './client/src/components/App';
-const ReactDOMServer = require('react-dom/server');
+import ReactDOMServer from 'react-dom/server';
 import React from 'react'; 
 /*import { StaticRouter } from 'react-router-dom/server'; */
 const express = require('express');
