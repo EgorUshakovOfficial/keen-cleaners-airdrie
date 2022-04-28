@@ -8,7 +8,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 const container = document.getElementById("root");
 
 // Render
-ReactDOM.hydrate(
+ReactDOM.render(
     <Router>
         <App />
     </Router>,
