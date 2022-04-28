@@ -68,7 +68,7 @@ app.post('/contact', (req, res) => {
 
 if (process.env.NODE_ENV === "production") {
     app.get("*", (req, res) => {
-        const markup = ReactDOMServer.renderToString(App)
+        const markup = ReactDOMServer.renderToString(<App/>)
         fs.readFile(path.resolve(__dirname, 'client', 'build', 'index.html'), "utf-8", (err, data) => {
             if (err) {
                 console.warn(err)
