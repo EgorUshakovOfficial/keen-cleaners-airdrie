@@ -9,8 +9,8 @@ const Home = () => {
                 <p className="home-description" style={{textAlign:"center"}}>Let us do the dirty work while you enjoy a spotless new home!</p>
                 <div id="logo-hours-container">
                     <img id="cleaning-supplies" src={supplies} />
-                    <p id="hours">
-                        <span className="bold">Hours of operation</span><br />
+                    <p id="hours" style={{ textAlign: "center" }}>
+                        <span className="bold">Hours of Operation</span><br />
                         Monday-Saturday<br />
                         8:00am-9:00pm
                     </p>
