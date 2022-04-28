@@ -5,57 +5,57 @@ import React, {useEffect, useState} from 'react';
 
 const Navbar = () => {
     // State
-    const [navMobState, setNavMobState] = React.useState("close")
+    /*const [navMobState, setNavMobState] = React.useState("close")*/
 
     // Handle navigate 
-    const handleNavigate = () => {
-        let navBar = document.getElementById("navbar")
-        let windowWidth = window.innerWidth
-        let mediaValue = 450
+    //const handleNavigate = () => {
+    //    let navBar = document.getElementById("navbar")
+    //    let windowWidth = window.innerWidth
+    //    let mediaValue = 450
 
-        if (windowWidth <= mediaValue) {
-            // Update state of navigation bar in mobile 
-            navBar.style.visibility = "hidden"
-            setNavMobState("close")
-        }
-    }
+    //    if (windowWidth <= mediaValue) {
+    //        // Update state of navigation bar in mobile 
+    //        navBar.style.visibility = "hidden"
+    //        setNavMobState("close")
+    //    }
+    //}
  
     // Handle click
-    const handleClick = e => {
-        let navBar = document.getElementById("navbar")
+    //const handleClick = e => {
+    //    let navBar = document.getElementById("navbar")
 
-        let value = e.target.getAttribute("value")
-        // Consider when navbar is open or closed and style accordingy 
-        switch (value) {
-            case "open":
-                navBar.style.visibility = "visible"
-                setNavMobState("open")
-                break;
-            case "close":
-                navBar.style.visibility = "hidden"
-                setNavMobState("close")
-                break;
-        }
-    }
+    //    let value = e.target.getAttribute("value")
+    //    // Consider when navbar is open or closed and style accordingy 
+    //    switch (value) {
+    //        case "open":
+    //            navBar.style.visibility = "visible"
+    //            setNavMobState("open")
+    //            break;
+    //        case "close":
+    //            navBar.style.visibility = "hidden"
+    //            setNavMobState("close")
+    //            break;
+    //    }
+    //}
 
-    const handleResize = () => {
-        let navBar = document.getElementById("navbar")
+    //const handleResize = () => {
+    //    let navBar = document.getElementById("navbar")
         
-        // media query trigger value
-        const mediaValue = 450
+    //    // media query trigger value
+    //    const mediaValue = 450
      
-        if (window.innerWidth > mediaValue) {
-            navBar.style.visibility = "visible"
-        } else {
-            let value = navBar.getAttribute("value")
-            navBar.style.visibility = (value === "open") ? "visible" : "hidden"
-        }
-    }
+    //    if (window.innerWidth > mediaValue) {
+    //        navBar.style.visibility = "visible"
+    //    } else {
+    //        let value = navBar.getAttribute("value")
+    //        navBar.style.visibility = (value === "open") ? "visible" : "hidden"
+    //    }
+    //}
 
-    React.useEffect(() => {
-        window.addEventListener("resize", handleResize)
-        return () => window.removeEventListener("resize", handleResize)
-    }, [])
+    //React.useEffect(() => {
+    //    window.addEventListener("resize", handleResize)
+    //    return () => window.removeEventListener("resize", handleResize)
+    //}, [])
 
     return (
         <header id="header">
