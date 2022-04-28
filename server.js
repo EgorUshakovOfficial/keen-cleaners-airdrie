@@ -71,15 +71,14 @@ if (process.env.NODE_ENV === "production") {
 
     app.get("*", (req, res) => {
         const markup = ReactDOMServer.renderToString(<App />)
-        res.send(markup)
-    //    //fs.readFile(path.resolve(__dirname, 'client', 'build', 'index.html'), "utf-8", (err, data) => {
-    //    //    if (err) {
-    //    //        console.warn(err)
-    //    //        return res.status(500).send("Some error has occurred")
-    //    //    } else {
-    //    //        return res.send(data.replace(`<div id="root"></div>`, `<div id="root">${markup}</div>`))
-    //    //    }
-    //    //})
+        fs.readFile(path.resolve(__dirname, 'client', 'build', 'index.html'), "utf-8", (err, data) => {
+            if (err) {
+                console.warn(err)
+                return res.status(500).send("Some error has occurred")
+            } else {
+                return res.send(data.replace(`<div id="root"></div>`, `<div id="root">${markup}</div>`))
+            }
+        })
     })
 
   
