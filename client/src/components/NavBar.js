@@ -64,13 +64,13 @@ const Navbar = () => {
             {/*        <img id="image" src={logo} placeholder="Logo is not showing" />*/}
             {/*    </div>*/}
             {/*</Link>*/}
-            <nav id="navbar" value={navMobState}>
+            <nav id="navbar" >
                 {/*<i class="fa-solid fa-close" value="close" onClick={handleClick}></i>*/}
                 {/*<Link to="/about" onClick={handleNavigate}>About</Link>*/}
                 {/*<Link to="/services" onClick={handleNavigate}>Services</Link>*/}
                 {/*<Link to="/contact" onClick={handleNavigate}>Contact Us</Link>*/}
             </nav>
-            <i class="fa-solid fa-bars" value="open" onClick={handleClick}></i>
+            <i class="fa-solid fa-bars" value="open" ></i>
         </header>
     )
 }
