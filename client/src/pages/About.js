@@ -1,4 +1,6 @@
 import about from '../css/about.css';
+import React from 'react';
+
 const About = () => {
     return (
         <section id="about-section">

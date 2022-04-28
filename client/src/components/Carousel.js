@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Carousel = () => {
     return (
         <div id="cleaningTestimonies" className="carousel slide" data-ride="carousel">

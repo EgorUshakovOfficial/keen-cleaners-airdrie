@@ -1,6 +1,8 @@
 import Carousal from '../components/Carousel';
 import supplies from '../Images/supplies.svg'
-import home from '../css/home.css'; 
+import home from '../css/home.css';
+import React from 'react';
+
 const Home = () => {
     return (
         <section id="home-section">

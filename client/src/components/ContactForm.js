@@ -1,13 +1,13 @@
-import { useState } from 'react';
+import React from 'react';
 
 const ContactForm = () => {
     // States 
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [number, setNumber] = useState("");
-    const [message, setMessage] = useState("");
-    const [error, setError] = useState("");
-    const [success, setSuccess] = useState(""); 
+    const [name, setName] = React.useState("");
+    const [email, setEmail] = React.useState("");
+    const [number, setNumber] = React.useState("");
+    const [message, setMessage] = React.useState("");
+    const [error, setError] = React.useState("");
+    const [success, setSuccess] = React.useState(""); 
 
     const handleSubmit = e => {
         e.preventDefault();

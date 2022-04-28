@@ -1,4 +1,6 @@
 import services from '../css/services.css';
+import React from 'react';
+
 import ServicePhotos from '../components/ServicePhotos';
 const Services = () => {
     return (

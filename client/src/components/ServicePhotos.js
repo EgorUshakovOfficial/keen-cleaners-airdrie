@@ -1,4 +1,5 @@
-// JavaScript source code
+import React from 'react'; 
+
 const ServicePhotos = () => {
     const photosObj = {
         "bathroom": "Bathrooms",
