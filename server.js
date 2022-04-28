@@ -2,10 +2,10 @@
 require('dotenv').config();
 
 // For server side rendering 
-/*import App from './client/src/components/App';*/
-/*const ReactDOMServer = require('react-dom/server');*/
-//import React from 'react'; 
-//import { StaticRouter } from 'react-router-dom/server'; 
+import App from './client/src/components/App';
+const ReactDOMServer = require('react-dom/server');
+import React from 'react'; 
+import { StaticRouter } from 'react-router-dom/server'; 
 
 const express = require('express');
 const app = express();
@@ -13,6 +13,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const nodeMailer = require('nodemailer');
 const path = require('path');
+const fs = require('fs');
 
 
 // Middleware
@@ -66,35 +67,26 @@ app.post('/contact', (req, res) => {
 })
 
 if (process.env.NODE_ENV === "production") {
+    app.get("*", (req, res) => {
+        const markup = ReactDOMServer.renderToString(
+            <StaticRouter location={req.url} context={{}}>
+                <App />
+            </StaticRouter>
+        )
+        fs.readFile(path.resolve('./client/build/index.html'), "utf-8", (err, data) => {
+            if (err) {
+                console.warn(err)
+                return res.status(500).send("Some error has occurred")
+            } else {
+                return res.send(data.replace(`<div id="root"></div>`, `<div id="root">${markup}</div>`))
+            }
+        })
+    })
+
     // Set static folder 
     app.use(express.static('client/build'))
 
-    // Routing 
-    app.use("*", express.static('client/build'))
-
-    //app.get("*", (req, res) => {
-    //    const html = ReactDOMServer.renderToString(
-    //        <StaticRouter location={req.url}>
-    //            <App />
-    //        </StaticRouter>
-    //    )
-
-    //    res.send(html)
-
-        /*const indexFile = path.resolve('./client/build/index.html')*/
-
-        //fs.readFile(indexFile, "utf-8", (err, data) => {
-        //    if (err) {
-        //        console.warn(err)
-        //        return res.status(500).send("Something went wrong!")
-        //    }
-        //    return res.send(data.replace(`<div id="root"></div>`, `<div id="root">${app}</div>`))
-        //})
-  /*  })*/
-
-    //app.get("*", (req, res) => {
-    //    res.sendFile(path.resolve(__dirname, 'client', 'build', 'indext.html')); 
-    //})
+  
 }
 
 // Listen to server 
