@@ -2,10 +2,11 @@
 require('dotenv').config();
 
 // For server side rendering 
-import App from './client/src/components/App';
-import ReactDOMServer from 'react-dom/server';
-import React from 'react'; 
+//import App from './client/src/components/App';
+//import ReactDOMServer from 'react-dom/server';
+//import React from 'react'; 
 /*import { StaticRouter } from 'react-router-dom/server'; */
+
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -22,7 +23,7 @@ app.use(cors({
 }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(express.static(path.resolve(__dirname, 'client', 'src', 'css')))
+
 
 // Node mailer 
 let transporter = nodeMailer.createTransport({
@@ -67,18 +68,23 @@ app.post('/contact', (req, res) => {
 
 if (process.env.NODE_ENV === "production") {
     // Set static folder 
+    app.use(express.static(path.resolve(__dirname, 'client', 'build')))
 
-    app.get("*", (req, res) => {
-        const markup = ReactDOMServer.renderToString(<App />)
-        fs.readFile(path.resolve(__dirname, 'client', 'build', 'index.html'), "utf-8", (err, data) => {
-            if (err) {
-                console.warn(err)
-                return res.status(500).send("Some error has occurred")
-            } else {
-                return res.send(data.replace(`<div id="root"></div>`, `<div id="root">${markup}</div>`))
-            }
-        })
-    })
+    // Routing for React
+    app.use("*", express.static(path.resolve(__dirname, 'client', 'build')))
+
+    // Implement server side rendering 
+    //app.get("*", (req, res) => {
+    //    const markup = ReactDOMServer.renderToString(<App />)
+    //    fs.readFile(path.resolve(__dirname, 'client', 'build', 'index.html'), "utf-8", (err, data) => {
+    //        if (err) {
+    //            console.warn(err)
+    //            return res.status(500).send("Some error has occurred")
+    //        } else {
+    //            return res.send(data.replace(`<div id="root"></div>`, `<div id="root">${markup}</div>`))
+    //        }
+    //    })
+    //})
 
   
 }
