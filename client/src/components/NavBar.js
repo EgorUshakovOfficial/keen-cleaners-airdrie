@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import logo from '../Images/logo.svg';
 import navbar from '../css/navbar.css';
-import React from 'react';
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
     // State
-    const [navMobState, setNavMobState] = React.useState("close")
+    const [navMobState, setNavMobState] = useState("close")
 
     // Handle navigate 
     const handleNavigate = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
             setNavMobState("close")
         }
     }
- 
+
     // Handle click
     const handleClick = e => {
         let navBar = document.getElementById("navbar")
@@ -40,10 +40,10 @@ const Navbar = () => {
 
     const handleResize = () => {
         let navBar = document.getElementById("navbar")
-        
+
         // media query trigger value
         const mediaValue = 450
-     
+
         if (window.innerWidth > mediaValue) {
             navBar.style.visibility = "visible"
         } else {
@@ -52,7 +52,7 @@ const Navbar = () => {
         }
     }
 
-    React.useEffect(() => {
+    useEffect(() => {
         window.addEventListener("resize", handleResize)
         return () => window.removeEventListener("resize", handleResize)
     }, [])
@@ -70,9 +70,9 @@ const Navbar = () => {
                 <Link to="/services" onClick={handleNavigate}>Services</Link>
                 <Link to="/contact" onClick={handleNavigate}>Contact Us</Link>
             </nav>
-            <i class="fa-solid fa-bars" value="open" ></i>
+            <i class="fa-solid fa-bars" value="open" onClick={handleClick}></i>
         </header>
     )
 }
 
-export default Navbar; 
+export default Navbar;
