@@ -132,7 +132,7 @@ h1, h2, h3{
 
     /* Navigation bar on mobile */
     #navbar {
-        position: absolute;
+        position: fixed;
         background: white;
         border: 1px solid lightgray;
         height: 100vh;
